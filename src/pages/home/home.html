@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      News
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Welcome to the News Meter
+    </ion-card-header>
+    <ion-card-content>
+      Please Search to filter
+      <ion-searchbar placeholder="Search e.g. Trump" (ionInput)="getStories()" [(ngModel)]="searchText">
+      </ion-searchbar>
+    </ion-card-content>
+  </ion-card>
+  <!--<ion-card-header>Stories</ion-card-header>-->
+  <ion-list [virtualScroll]="stories">
+    <ion-item *virtualItem="let item">
+      <ion-thumbnail item-left>
+        <img *ngIf="item.showThumbnail" [src]="item.imgUrl" >
+      </ion-thumbnail>
+      <h2>{{ item.headline }}</h2>
+      <p>{{ item.publisheddate | date : "dd.MM.y" }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
