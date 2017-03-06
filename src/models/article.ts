@@ -1,10 +1,13 @@
 import { IArticle } from "./Iarticle";
 
 export class Article implements IArticle {
-    showThumbnail: boolean;
-    headline: string;
-    publisheddate: string;
+    author: string;
+    title: string;
+    description:string;
     url: string;
-    imgUrl: string;
+    urlToImage: string;
+    publishedAt: string;
+    sourceThumbnail: string;
+    sourceId:string;
     constructor() {}
 }

@@ -1,1 +1,1 @@
-export * from './topstory.service';
+export * from './news.service';

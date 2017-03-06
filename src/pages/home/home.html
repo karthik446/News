@@ -13,18 +13,49 @@
     </ion-card-header>
     <ion-card-content>
       Please Search to filter
-      <ion-searchbar placeholder="Search e.g. Trump" (ionInput)="getStories()" [(ngModel)]="searchText">
+      <ion-searchbar placeholder="Search e.g. Trump" (ionInput)="searchArticles()" [(ngModel)]="searchText">
       </ion-searchbar>
     </ion-card-content>
   </ion-card>
-  <!--<ion-card-header>Stories</ion-card-header>-->
-  <ion-list [virtualScroll]="stories">
-    <ion-item *virtualItem="let item">
-      <ion-thumbnail item-left>
-        <img *ngIf="item.showThumbnail" [src]="item.imgUrl" >
-      </ion-thumbnail>
-      <h2>{{ item.headline }}</h2>
-      <p>{{ item.publisheddate | date : "dd.MM.y" }}</p>
+
+  <!--<ion-list [virtualScroll]="articles">
+    <ion-item *virtualItem="let article">
+      <ion-card>
+        <ion-thumbnail item-left>
+          <img [src]="article.urlToImage">
+        </ion-thumbnail>
+        <ion-card-content>
+          <ion-card-title> {{ article.title }}</ion-card-title>
+        </ion-card-content>
+        
+      </ion-card>
     </ion-item>
+
+  </ion-list>-->
+  <ion-list>
+
+    <ion-card *ngFor="let article of articles">
+      <ion-row>
+        <ion-col>
+          <img [src]="article.urlToImage" />
+        </ion-col>
+        <ion-col col-8>
+          <h4> {{ article.title }}</h4>
+          <ion-thumbnail item-right class="news-thumbnail"> <img [src]="article.sourceThumbnail" /></ion-thumbnail>
+        </ion-col>
+      </ion-row>
+      <!--<ion-thumbnail item-left>-->
+      <!--</ion-thumbnail>-->
+
+      <!--<p>{{ article.publishedAt | date : "dd.MM.y" }}</p>-->
+    </ion-card>
+    <!--<ion-item *virtualItem="let article">
+      <ion-thumbnail item-left>
+        <img [src]="article.urlToImage">
+      </ion-thumbnail>
+      <h4> {{ article.title }}</h4>
+      <p>{{ article.publishedAt | date : "dd.MM.y" }}</p>
+    </ion-item>-->
   </ion-list>
+
 </ion-content>

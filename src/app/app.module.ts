@@ -2,8 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { TopStoryService } from "../sharedservices/serviceproviders";
-import { TopStoryConfig } from "../config/configprovider";
+import { NewsService } from "../sharedservices/serviceproviders";
+import { Config } from "../config/configprovider";
+import { ArticleRepository } from "../repositories/repositories";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,6 @@ import { TopStoryConfig } from "../config/configprovider";
     HomePage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler },
-    TopStoryService, TopStoryConfig]
+    NewsService, Config, ArticleRepository]
 })
 export class AppModule { }

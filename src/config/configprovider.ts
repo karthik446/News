@@ -1,1 +1,1 @@
-export * from './topstory.config';
+export * from './config';
