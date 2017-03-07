@@ -7,4 +7,5 @@ export interface IArticle {
     publishedAt: string;
     sourceThumbnail: string;
     sourceId: string;
+    timeElapsed: string;
 }

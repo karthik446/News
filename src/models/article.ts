@@ -9,5 +9,6 @@ export class Article implements IArticle {
     publishedAt: string;
     sourceThumbnail: string;
     sourceId:string;
+    timeElapsed:string;
     constructor() {}
 }
