@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { NewsService } from "../../sharedservices/serviceproviders";
 import { IArticle } from "../../models/models";
 import _ from 'lodash';
-import { Observable } from 'rxjs'
 import 'rxjs/add/observable/of';
 @Component({
   selector: 'page-home',
